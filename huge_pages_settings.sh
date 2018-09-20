@@ -1,3 +1,13 @@
+1. Check Phyiscal Memory
+# grep MemTotal /proc/meminfo
+  MemTotal:       131798860 kB
+2. Check Hugepagesize
+# grep Hugepagesize /proc/meminfo
+  Hugepagesize:       2048 kB  
+# Calculate Hugepages
+  SGA / Hugepagesize = Number Hugepages
+  Or we use below script
+  
 #!/bin/bash
 KERN=`uname -r | awk -F. '{ printf("%d.%d\n",$1,$2); }'`
 # Find out the HugePage size
