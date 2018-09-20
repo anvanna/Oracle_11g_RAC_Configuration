@@ -1,0 +1,32 @@
+1. Add Groups
+--required groups
+#/usr/sbin/groupadd -g 501 oinstall
+#/usr/sbin/groupadd -g 502 dba
+#/usr/sbin/groupadd -g 503 oper
+
+/usr/sbin/groupadd -g 1200 oinstall 
+/usr/sbin/groupadd -g 1201 asmadmin
+/usr/sbin/groupadd -g 1202 asmdba  
+/usr/sbin/groupadd -g 1203 asmoper 
+/usr/sbin/groupadd -g 1300 dba
+/usr/sbin/groupadd -g 1301 oper
+
+2. Add user Oracle
+
+/usr/sbin/useradd -u 1101 -g oinstall -G dba,oper -d /home/oracle -s /bin/bash -c "Oracle Software Owner" oracle
+/usr/sbin/usermod -g oinstall -G dba,oper -d /home/oracle -s /bin/bash -c "Oracle Software Owner" oracle
+/usr/sbin/useradd -m -u 1102 -g oinstall -G asmadmin,asmdba,asmoper,dba -d /home/grid -s /bin/bash -c "Oracle Software Owner"  grid
+# passwd oracle
+  DB$%^**Orac!@#
+# passwd grid
+  DB$%^**Grid!@#
+# SYS PASSWORD
+  L#wing456&*
+  
+mkdir -p /u01/app/12.2.0.1/grid
+mkdir -p /u01/app/grid
+mkdir -p /u01/app/oracle
+chown -R grid:oinstall /u01/app
+chown -R oracle:oinstall /u01/app/oracle
+chmod -R 775 /u01/app
+
