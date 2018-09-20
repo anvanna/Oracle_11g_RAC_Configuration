@@ -16,12 +16,6 @@
 /usr/sbin/useradd -u 1101 -g oinstall -G dba,oper -d /home/oracle -s /bin/bash -c "Oracle Software Owner" oracle
 /usr/sbin/usermod -g oinstall -G dba,oper -d /home/oracle -s /bin/bash -c "Oracle Software Owner" oracle
 /usr/sbin/useradd -m -u 1102 -g oinstall -G asmadmin,asmdba,asmoper,dba -d /home/grid -s /bin/bash -c "Oracle Software Owner"  grid
-# passwd oracle
-  DB$%^**Orac!@#
-# passwd grid
-  DB$%^**Grid!@#
-# SYS PASSWORD
-  L#wing456&*
   
 mkdir -p /u01/app/12.2.0.1/grid
 mkdir -p /u01/app/grid
